@@ -39,9 +39,9 @@ Parameters are estimated by an LLM (Claude Sonnet 4) given only a text descripti
 
 These are known companies with known outcomes — subject to hindsight bias. Full 21-case breakdown: [`paper/validation.md`](paper/validation.md)
 
-### Blind test: 92% accuracy (no brand names)
+### Blind test: 22/26 = 85% accuracy (no brand names)
 
-We stripped brand names and tested on disguised descriptions. The formula identified Figma, Cursor, Uber, OpenClaw as winners and Segway, MoviePass, WeWork, Quibi, Devin, Google+, Magic Leap as failures — without knowing what they were. Details: [`benchmarks/v4_blind.json`](benchmarks/v4_blind.json)
+We stripped brand names and tested on disguised descriptions across 26 cases. 4 misses: Coolblue (borderline, R₀=0.99), Jumia and Pipe (failed due to fraud/management, not structural dynamics), Temu (low R₀ but $3B+/year ad spend). Details: [`benchmarks/v4_blind.json`](benchmarks/v4_blind.json)
 
 ### Prospective: Live short selling (March 2026)
 

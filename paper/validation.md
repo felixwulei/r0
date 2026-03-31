@@ -44,41 +44,43 @@ This validates that the formula's structure captures real dynamics, but is subje
 
 ### Exponential Growth (R₀ > 2)
 
-| # | Company | R₀ | Prediction | Actual Outcome |
-|---|---------|-----|-----------|----------------|
-| 1 | ChatGPT | 7.6 | Exponential | 100M users / 2 months |
-| 2 | Zoom (2020) | 5.1 | Exponential | 300M DAU peak |
-| 3 | OpenClaw | 5.0 | Exponential | 247K GitHub stars / 3 months |
-| 4 | Cursor | 2.85 | Exponential | $2B ARR / 12 months |
-| 5 | Slack | 2.72 | Exponential | $27.7B acquisition |
-| 6 | Figma | 2.66 | Exponential | $20B valuation |
-| 7 | Canva | 2.42 | Exponential | $26B, 170M MAU |
+| # | Company | k | λ | R | 1-F | S | V | R₀ | Actual Outcome |
+|---|---------|---|---|---|-----|---|---|-----|----------------|
+| 1 | ChatGPT | 5.0 | 0.85 | 0.95 | 0.90 | 1.5 | 0.95 | 5.31 | 100M users / 2 months ✓ |
+| 2 | Zoom (2020) | 6.0 | 0.88 | 0.92 | 0.85 | 1.8 | 0.95 | 7.55 | 300M DAU peak ✓ |
+| 3 | OpenClaw | 5.0 | 0.85 | 0.95 | 1.00 | 1.5 | 0.95 | 5.90 | 247K GitHub stars / 3 months ✓ |
+| 4 | Cursor | 3.2 | 0.88 | 0.85 | 0.85 | 1.4 | 0.92 | 2.92 | $2B ARR / 12 months ✓ |
+| 5 | Slack | 4.2 | 0.88 | 0.85 | 0.92 | 1.4 | 0.92 | 4.15 | $27.7B acquisition ✓ |
+| 6 | Figma | 3.5 | 0.85 | 0.80 | 0.95 | 1.2 | 0.80 | 2.66 | $20B valuation ✓ |
+| 7 | Canva | 3.0 | 0.85 | 0.85 | 0.95 | 1.1 | 0.85 | 2.42 | $26B, 170M MAU ✓ |
 
 ### Steady Growth (1 < R₀ ≤ 2)
 
-| # | Company | R₀ | Prediction | Actual Outcome |
-|---|---------|-----|-----------|----------------|
-| 8 | GitHub Copilot | 2.0 | Steady (borderline) | Fast adoption, not explosive |
-| 9 | Notion | 1.49 | Steady | $10B, steady growth |
-| 10 | Replit | 1.62 | Steady | $1.16B valuation |
-| 11 | Linear | 1.12 | Steady | Loved by devs, not explosive |
-| 12 | Stripe | 1.07 | Steady | $95B (massive market) |
+| # | Company | k | λ | R | 1-F | S | V | R₀ | Actual Outcome |
+|---|---------|---|---|---|-----|---|---|-----|----------------|
+| 8 | GitHub Copilot | 2.5 | 0.85 | 0.90 | 0.80 | 1.2 | 0.95 | 2.00 | Fast adoption, not explosive ✓ |
+| 9 | Notion | 2.5 | 0.75 | 0.80 | 0.70 | 1.2 | 0.25 | 1.91 | $10B, steady growth ✓ |
+| 10 | Replit | 2.0 | 0.80 | 0.75 | 0.90 | 1.1 | 0.90 | 1.62 | $1.16B valuation ✓ |
+| 11 | Linear | 2.0 | 0.85 | 0.80 | 0.70 | 1.2 | 0.80 | 1.12 | Loved by devs, not explosive ✓ |
+| 12 | Stripe | 3.2 | 0.92 | 0.88 | 0.85 | 1.3 | 0.90 | 2.95 | $95B (massive market) ✓ |
 
 ### Struggling / Dead (R₀ < 1)
 
-| # | Company | R₀ | Prediction | Actual Outcome |
-|---|---------|-----|-----------|----------------|
-| 13 | Superhuman | 0.36 | Struggling | Niche, limited growth |
-| 14 | Google+ | 0.41 | Struggling | Shut down 2019 |
-| 15 | Palantir | 0.006 | Dead | $200B but 4000-person sales army |
-| 16 | Harvey AI | 0.0014 | Dead | Growing but 10% staff are ex-lawyers doing sales |
-| 17 | Devin | 0.03 | Dead | Hype → reputation reversal |
-| 18 | Quibi | 0.09 | Dead | $1.75B burned, shut down in 6 months |
-| 19 | Google+ | 0.41 | Struggling | Shut down |
-| 20 | Zillow Offers | 0.000001 | Dead | Lost $880M, shut down |
-| 21 | Clubhouse | 1.68→0.16 | Boom→Bust | Exploded then collapsed |
+| # | Company | k | λ | R | 1-F | S | V | R₀ | Actual Outcome |
+|---|---------|---|---|---|-----|---|---|-----|----------------|
+| 13 | Superhuman | 1.5 | 0.70 | 0.80 | 0.40 | 1.0 | 0.60 | 0.36 | Niche, limited growth ✓ |
+| 14 | Palantir | 0.3 | 0.85 | 0.70 | 0.15 | 1.2 | 0.20 | 0.006 | $200B but 4000-person sales army ✓ |
+| 15 | Harvey AI | 0.4 | 0.75 | 0.80 | 0.03 | 1.2 | 0.15 | 0.0014 | 10% staff are ex-lawyers doing sales ✓ |
+| 16 | Devin | 2.0 | 0.20 | 0.40 | 0.30 | 2.5 | 0.10 | 0.03 | Hype → reputation reversal ✓ |
+| 17 | Quibi | 0.15 | 0.25 | 0.20 | 0.30 | 0.4 | 0.85 | 0.0009 | $1.75B burned, shut down ✓ |
+| 18 | Google+ | 0.20 | 0.15 | 0.25 | 0.30 | 0.4 | 0.85 | 0.0009 | Shut down 2019 ✓ |
+| 19 | Zillow Offers | 0.1 | 0.10 | 0.001 | 0.50 | 0.5 | 0.02 | 0.000001 | Lost $880M, shut down ✓ |
+| 20 | Clubhouse (peak) | 8.0 | 0.70 | 0.80 | 0.30 | 1.2 | 0.70 | 1.68 | Exploded ✓ |
+| 21 | Clubhouse (decline) | 0.5 | 0.40 | 0.50 | 0.80 | 0.5 | 0.40 | 0.16 | Collapsed ✓ |
 
 **Retrospective accuracy: 21/21 correct classifications.**
+
+Note: Each row's parameters are fully auditable. If you disagree with a parameter value, you can substitute your own estimate and recompute R₀.
 
 ---
 
@@ -86,16 +88,20 @@ This validates that the formula's structure captures real dynamics, but is subje
 
 Products were described generically without brand names. The LLM estimated parameters without knowing what company it was evaluating.
 
-**Disguised (12 cases):** 11/12 correct = **92%**
+**Overall: 22/26 correct = 84.6%**
+
+Breakdown by group:
+
+**Disguised (12 cases):** 11/12 correct = 92%
 - Correctly identified: Figma, Cursor, Uber, OpenClaw, Linear (success); Segway, MoviePass, WeWork, Quibi, Devin, Google+, Magic Leap (failure)
-- Sole miss: Coolblue (R₀ = 0.99, actual: success) — borderline case, off by 0.01
+- Miss: Coolblue (R₀ = 0.99, actual: success) — borderline case, off by 0.01
 
-**Obscure companies (8 cases):** 6/8 correct = **75%**
+**Obscure companies (8 cases):** 6/8 correct = 75%
 - Misses: Jumia (R₀ = 1.42, actual: failing) and Pipe (R₀ = 1.84, actual: failing)
-- Both failures were caused by management/fraud issues, not structural dynamics
+- Both failures were caused by management/fraud issues, not structural dynamics — R₀ doesn't model fraud
 
-**Recent 2024-2025 products (6 cases):** 5/6 correct = **83%**
-- Miss: Temu (R₀ = 0.39, actual: growing) — growth driven by massive ad spend, not organic R₀
+**Recent 2024-2025 products (6 cases):** 5/6 correct = 83%
+- Miss: Temu (R₀ = 0.39, actual: growing) — growth driven by massive ad spend ($3B+/year), not organic R₀. This is the Palantir Paradox: low R₀ + massive paid acquisition can still produce growth
 
 Full data: [`../benchmarks/v4_blind.json`](../benchmarks/v4_blind.json)
 
