@@ -26,16 +26,16 @@ Parameters are estimated by an LLM (Claude Sonnet 4) given only a text descripti
 
 | Company | R₀ | Predicted | Actual | |
 |---|---|---|---|---|
-| ChatGPT | 7.6 | Exponential | 100M users / 2 months | ✓ |
-| Zoom (2020) | 5.1 | Exponential | 300M DAU | ✓ |
-| Cursor | 2.85 | Exponential | $2B ARR / 12 months | ✓ |
-| Slack | 2.72 | Exponential | $27.7B acquisition | ✓ |
-| Notion | 1.49 | Steady | $10B, steady growth | ✓ |
-| Stripe | 1.07 | Steady | $95B (huge market) | ✓ |
-| Superhuman | 0.36 | Struggling | Niche, limited growth | ✓ |
-| Devin | 0.03 | Dead | Hype → reputation reversal | ✓ |
-| Quibi | 0.09 | Dead | $1.75B burned, shut down | ✓ |
-| Zillow Offers | 0.000001 | Dead | Lost $880M, shut down | ✓ |
+| ChatGPT | 5.31 | Exponential | 100M users / 2 months | ✓ |
+| Zoom (2020) | 7.55 | Exponential | 300M DAU | ✓ |
+| Cursor | 2.92 | Exponential | $2B ARR / 12 months | ✓ |
+| Slack | 4.15 | Exponential | $27.7B acquisition | ✓ |
+| Notion | 1.91 | Steady | $10B, steady growth | ✓ |
+| Stripe | 2.95 | Exponential | $95B valuation | ✓ |
+| Superhuman | 0.39 | Struggling | Niche, limited growth | ✓ |
+| Devin | 0.24 | Struggling | Hype → reputation reversal | ✓ |
+| Quibi | 0.0009 | Dead | $1.75B burned, shut down | ✓ |
+| Zillow Offers | 0.000008 | Dead | Lost $880M, shut down | ✓ |
 
 These are known companies with known outcomes — subject to hindsight bias. Full 21-case breakdown: [`paper/validation.md`](paper/validation.md)
 
