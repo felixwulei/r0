@@ -1,0 +1,462 @@
+{
+  "disguised": [
+    {
+      "blind_desc": "A browser-based design tool (2016) that lets multiple people edit the same file simultaneously. Free to start, no install needed. Designers share links to get feedback, which exposes non-users to the product.",
+      "real_name": "Figma",
+      "outcome": true,
+      "why": "$20B Adobe acquisition attempt, dominant design tool",
+      "naked_pred": true,
+      "naked_prob": 0.85,
+      "formula_pred": true,
+      "formula_r0": 2.6988269284846864,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.8,
+        "S": 1.8,
+        "V": 0.85
+      }
+    },
+    {
+      "blind_desc": "A developer tool (2024) that wraps an existing code editor (VS Code) and adds AI autocomplete. Users download it, start typing, and see suggestions immediately. Teams adopt it when one engineer shows others how fast they can code.",
+      "real_name": "Cursor",
+      "outcome": true,
+      "why": "$2B ARR in ~12 months",
+      "naked_pred": true,
+      "naked_prob": 0.8,
+      "formula_pred": true,
+      "formula_r0": 5.3292791487712,
+      "params": {
+        "k": 3.5,
+        "lambda": 0.85,
+        "R": 0.7,
+        "1-F": 0.9,
+        "S": 2.8,
+        "V": 0.95
+      }
+    },
+    {
+      "blind_desc": "A mobile app (2012) that lets anyone become a taxi driver using their personal car. Riders request a car, get picked up in minutes. Each ride exposes the driver to the platform, and riders tell friends.",
+      "real_name": "Uber",
+      "outcome": true,
+      "why": "$150B+ market cap",
+      "naked_pred": true,
+      "naked_prob": 0.85,
+      "formula_pred": true,
+      "formula_r0": 2.8371754186303515,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.7,
+        "1-F": 0.75,
+        "S": 2.2,
+        "V": 0.9
+      }
+    },
+    {
+      "blind_desc": "An open-source command-line AI agent (2025) that runs locally on your computer, connects to messaging apps (Telegram, WhatsApp), and can perform tasks autonomously. MIT licensed, three commands to install.",
+      "real_name": "OpenClaw",
+      "outcome": true,
+      "why": "180K+ GitHub stars, founder acqui-hired by OpenAI",
+      "naked_pred": true,
+      "naked_prob": 0.75,
+      "formula_pred": true,
+      "formula_r0": 3.778995846748856,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.9,
+        "S": 2.2,
+        "V": 0.8
+      }
+    },
+    {
+      "blind_desc": "A SaaS tool (2019) for software teams to track tasks and bugs. Keyboard-first, extremely fast UI. Competes with a dominant but slow incumbent. Teams adopt when one engineer switches and others see the speed difference.",
+      "real_name": "Linear",
+      "outcome": true,
+      "why": "Steady growth, beloved by devs, but not explosive",
+      "naked_pred": true,
+      "naked_prob": 0.8,
+      "formula_pred": true,
+      "formula_r0": 3.316179060736775,
+      "params": {
+        "k": 3.5,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.8,
+        "S": 1.8,
+        "V": 0.9
+      }
+    },
+    {
+      "blind_desc": "A hardware device (2001) — a two-wheeled electric scooter for personal transportation. Costs $5,000. Predicted to be 'bigger than the internet'. Requires sidewalks, can't go on roads legally in most cities. Users look unusual riding it.",
+      "real_name": "Segway",
+      "outcome": false,
+      "why": "Only sold ~140K units total, became a mall cop meme",
+      "naked_pred": false,
+      "naked_prob": 0.8,
+      "formula_pred": false,
+      "formula_r0": 0.015605548521114232,
+      "params": {
+        "k": 0.3,
+        "lambda": 0.4,
+        "R": 0.6,
+        "1-F": 0.3,
+        "S": 0.7,
+        "V": 0.9
+      }
+    },
+    {
+      "blind_desc": "A subscription service (2017) offering unlimited movie theater tickets for $10/month. Massive user growth initially. Each ticket costs the company $12-15 to fulfill. No path to profitability as usage scales.",
+      "real_name": "MoviePass",
+      "outcome": false,
+      "why": "Bankrupt 2020, burned through $100M+",
+      "naked_pred": false,
+      "naked_prob": 0.95,
+      "formula_pred": false,
+      "formula_r0": 0.6712095021192884,
+      "params": {
+        "k": 3.2,
+        "lambda": 0.85,
+        "R": 0.15,
+        "1-F": 0.9,
+        "S": 1.8,
+        "V": 0.95
+      }
+    },
+    {
+      "blind_desc": "A co-working space company (2010s) that leases office buildings long-term and subleases desks short-term to freelancers and startups. Rapid expansion to 700+ locations. Revenue growing but massive losses. CEO has controversial management style.",
+      "real_name": "WeWork",
+      "outcome": false,
+      "why": "IPO collapsed, valuation $47B to bankruptcy",
+      "naked_pred": false,
+      "naked_prob": 0.75,
+      "formula_pred": false,
+      "formula_r0": 0.1730839650550118,
+      "params": {
+        "k": 1.8,
+        "lambda": 0.4,
+        "R": 0.3,
+        "1-F": 0.6,
+        "S": 1.2,
+        "V": 0.7
+      }
+    },
+    {
+      "blind_desc": "A mobile-only streaming service (2020) with short episodes (under 10 minutes) made by Hollywood studios. Content cannot be shared outside the app. Launched same month as a global pandemic. Requires $5/month subscription.",
+      "real_name": "Quibi",
+      "outcome": false,
+      "why": "Shut down after 6 months, $1.75B burned",
+      "naked_pred": false,
+      "naked_prob": 0.25,
+      "formula_pred": false,
+      "formula_r0": 0.29427605782672567,
+      "params": {
+        "k": 1.8,
+        "lambda": 0.3,
+        "R": 0.4,
+        "1-F": 0.6,
+        "S": 2.2,
+        "V": 0.9
+      }
+    },
+    {
+      "blind_desc": "An AI autonomous software engineer (2024) that takes a task description and works independently for hours to produce code. User submits a task, waits 2-6 hours, then reviews the output. Often produces code that doesn't work or doesn't match requirements. Costs $500/month.",
+      "real_name": "Devin",
+      "outcome": false,
+      "why": "Initial hype then massive reputation reversal, low retention",
+      "naked_pred": false,
+      "naked_prob": 0.15,
+      "formula_pred": false,
+      "formula_r0": 0.03591472166943983,
+      "params": {
+        "k": 0.3,
+        "lambda": 0.2,
+        "R": 0.4,
+        "1-F": 0.3,
+        "S": 2.5,
+        "V": 0.1
+      }
+    },
+    {
+      "blind_desc": "A social network (2011) backed by the world's largest search engine. Launched by bundling it with the company's email service, giving it instant hundreds of millions of 'users'. But users have no reason to post — their friends aren't actively using it. No unique feature vs existing dominant social network.",
+      "real_name": "Google+",
+      "outcome": false,
+      "why": "Shut down 2019, never achieved real engagement",
+      "naked_pred": false,
+      "naked_prob": 0.85,
+      "formula_pred": false,
+      "formula_r0": 0.005201849507038077,
+      "params": {
+        "k": 0.3,
+        "lambda": 0.2,
+        "R": 0.7,
+        "1-F": 0.1,
+        "S": 1.2,
+        "V": 0.9
+      }
+    },
+    {
+      "blind_desc": "A consumer AR headset (2018) that raised $3.5B before launching. The device projects images onto transparent lenses. Costs $2,300. Very few apps available. Developer ecosystem is tiny. The 'wow' demo works but daily utility is unclear.",
+      "real_name": "Magic Leap",
+      "outcome": false,
+      "why": "Consumer product flopped, pivoted to enterprise",
+      "naked_pred": false,
+      "naked_prob": 0.85,
+      "formula_pred": false,
+      "formula_r0": 0.006199367331599054,
+      "params": {
+        "k": 0.3,
+        "lambda": 0.2,
+        "R": 0.4,
+        "1-F": 0.1,
+        "S": 1.8,
+        "V": 0.3
+      }
+    }
+  ],
+  "obscure": [
+    {
+      "desc": "Coolblue — Dutch online electronics retailer, founded 2000. Own delivery fleet, strong customer service culture, expanded to Belgium/Germany. Competing against Amazon in Benelux.",
+      "outcome": true,
+      "why": "€2.5B revenue, profitable, 6000+ employees, IPO planned",
+      "naked_pred": true,
+      "naked_prob": 0.75,
+      "formula_pred": false,
+      "formula_r0": 0.9948537182210323,
+      "params": {
+        "k": 1.8,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.7,
+        "S": 1.2,
+        "V": 0.9
+      }
+    },
+    {
+      "desc": "Vinted — Lithuanian secondhand clothing marketplace app, launched 2008. Peer-to-peer, no seller fees (buyer pays small protection fee). Strong in Europe, 80M+ members.",
+      "outcome": true,
+      "why": "€596M revenue 2024, profitable, largest secondhand platform in Europe",
+      "naked_pred": true,
+      "naked_prob": 0.85,
+      "formula_pred": true,
+      "formula_r0": 3.4964029360649755,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.8,
+        "S": 2.2,
+        "V": 0.7
+      }
+    },
+    {
+      "desc": "Getir — Turkish ultrafast grocery delivery, founded 2015. Promises delivery in 10 minutes from dark stores. Expanded aggressively to US/UK/Europe in 2021-2022. Raised $12B at peak.",
+      "outcome": false,
+      "why": "Pulled out of US/UK/Europe, massive layoffs, valuation crashed from $12B to ~$1B",
+      "naked_pred": false,
+      "naked_prob": 0.75,
+      "formula_pred": false,
+      "formula_r0": 0.0936332911266854,
+      "params": {
+        "k": 1.8,
+        "lambda": 0.3,
+        "R": 0.4,
+        "1-F": 0.6,
+        "S": 0.7,
+        "V": 0.9
+      }
+    },
+    {
+      "desc": "Gorillas — German ultrafast grocery delivery, founded 2020. 10-minute delivery from dark stores in major cities. Raised $1.3B, expanded to 9 countries in 18 months.",
+      "outcome": false,
+      "why": "Acquired by Getir at massive down-round, essentially failed",
+      "naked_pred": false,
+      "naked_prob": 0.75,
+      "formula_pred": false,
+      "formula_r0": 0.035669825191118255,
+      "params": {
+        "k": 1.8,
+        "lambda": 0.3,
+        "R": 0.2,
+        "1-F": 0.4,
+        "S": 0.8,
+        "V": 0.9
+      }
+    },
+    {
+      "desc": "Jumia — 'Amazon of Africa', Nigerian e-commerce platform launched 2012. Online marketplace + logistics + payments across 11 African countries.",
+      "outcome": false,
+      "why": "Stock crashed from $60 to $4, persistent losses, scaled back from many countries",
+      "naked_pred": false,
+      "naked_prob": 0.3,
+      "formula_pred": true,
+      "formula_r0": 1.4175886631589834,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.7,
+        "R": 0.6,
+        "1-F": 0.4,
+        "S": 2.1,
+        "V": 0.3
+      }
+    },
+    {
+      "desc": "Pipe — US fintech, founded 2020. Lets SaaS companies sell future recurring revenue for upfront cash (trading platform for revenue). No dilution, no debt.",
+      "outcome": false,
+      "why": "CEO resigned amid controversies, massive layoffs, pivot away from original model",
+      "naked_pred": true,
+      "naked_prob": 0.75,
+      "formula_pred": true,
+      "formula_r0": 1.8421979120335048,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.7,
+        "1-F": 0.6,
+        "S": 1.4,
+        "V": 0.4
+      }
+    },
+    {
+      "desc": "Bolt (Taxify) — Estonian ride-hailing and delivery super-app, founded 2013. Operates in 45+ countries, mainly Europe and Africa. Cheaper than Uber in most markets.",
+      "outcome": true,
+      "why": "€600M+ revenue, reached profitability, dominant in Eastern Europe/Africa",
+      "naked_pred": true,
+      "naked_prob": 0.75,
+      "formula_pred": true,
+      "formula_r0": 1.1606626712578711,
+      "params": {
+        "k": 1.8,
+        "lambda": 0.85,
+        "R": 0.7,
+        "1-F": 0.75,
+        "S": 1.4,
+        "V": 0.9
+      }
+    },
+    {
+      "desc": "Wise (TransferWise) — UK-based international money transfer service, founded 2011. Shows real exchange rate, charges small transparent fee. Peer-to-peer matching system.",
+      "outcome": true,
+      "why": "£1B+ revenue, profitable, LSE listed, 16M+ customers",
+      "naked_pred": true,
+      "naked_prob": 0.85,
+      "formula_pred": true,
+      "formula_r0": 2.0634003044584373,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.8,
+        "S": 1.4,
+        "V": 0.9
+      }
+    }
+  ],
+  "recent": [
+    {
+      "desc": "Perplexity AI — AI-powered search engine, launched 2022, major growth in 2024-2025. Gives direct answers with citations instead of blue links. Free tier + $20/month pro. Competing with Google Search.",
+      "outcome": true,
+      "why": "$500M+ ARR by early 2026, Series D at $18B valuation",
+      "naked_pred": true,
+      "naked_prob": 0.7,
+      "formula_pred": true,
+      "formula_r0": 3.1903167693324197,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.85,
+        "R": 0.75,
+        "1-F": 0.8,
+        "S": 2.2,
+        "V": 0.95
+      }
+    },
+    {
+      "desc": "Humane AI Pin — wearable AI device (2024) that projects a screen onto your palm. No app store, limited functionality. Costs $699 + $24/month. Reviews universally negative. Intended to replace the smartphone.",
+      "outcome": false,
+      "why": "Catastrophic reviews, company seeking sale, product recalled",
+      "naked_pred": false,
+      "naked_prob": 0.95,
+      "formula_pred": false,
+      "formula_r0": 0.0004334874589198399,
+      "params": {
+        "k": 0.1,
+        "lambda": 0.2,
+        "R": 0.3,
+        "1-F": 0.1,
+        "S": 0.7,
+        "V": 0.9
+      }
+    },
+    {
+      "desc": "Rabbit R1 — handheld AI device (2024), bright orange, $199. Uses a 'Large Action Model' to interact with apps on your behalf. Limited app support, slow responses, many features don't work as advertised.",
+      "outcome": false,
+      "why": "Poor reviews, most features broken at launch, sales collapsed",
+      "naked_pred": false,
+      "naked_prob": 0.15,
+      "formula_pred": false,
+      "formula_r0": 0.013376184446669343,
+      "params": {
+        "k": 0.3,
+        "lambda": 0.2,
+        "R": 0.4,
+        "1-F": 0.3,
+        "S": 1.8,
+        "V": 0.9
+      }
+    },
+    {
+      "desc": "Arc Browser — reimagined web browser (2024) by The Browser Company. Sidebar-based tab management, Spaces for different contexts, built-in tools. Free, Mac/Windows/iOS.",
+      "outcome": false,
+      "why": "Company abandoned Arc to build a different AI browser product, admitted Arc was too complex for mainstream",
+      "naked_pred": false,
+      "naked_prob": 0.3,
+      "formula_pred": false,
+      "formula_r0": 0.9053423205045386,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.7,
+        "R": 0.6,
+        "1-F": 0.4,
+        "S": 1.8,
+        "V": 0.8
+      }
+    },
+    {
+      "desc": "Temu — Chinese ultra-cheap e-commerce app by PDD Holdings, launched US 2022. Prices 50-90% cheaper than Amazon. Gamified shopping experience. Massive ad spend including Super Bowl ads.",
+      "outcome": true,
+      "why": "200M+ downloads in US, $35B+ GMV, fastest growing e-commerce app",
+      "naked_pred": true,
+      "naked_prob": 0.75,
+      "formula_pred": false,
+      "formula_r0": 0.3880038516448023,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.4,
+        "R": 0.6,
+        "1-F": 0.3,
+        "S": 1.8,
+        "V": 0.8
+      }
+    },
+    {
+      "desc": "Threads — text-based social app by Meta (2024), direct competitor to X/Twitter. Leveraged Instagram's user base for instant signup. 100M signups in first week.",
+      "outcome": true,
+      "why": "275M+ MAU by early 2026, growing steadily, becoming viable X alternative",
+      "naked_pred": true,
+      "naked_prob": 0.75,
+      "formula_pred": true,
+      "formula_r0": 1.4443802131209058,
+      "params": {
+        "k": 2.8,
+        "lambda": 0.7,
+        "R": 0.85,
+        "1-F": 0.6,
+        "S": 1.4,
+        "V": 0.9
+      }
+    }
+  ]
+}

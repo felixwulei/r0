@@ -1,0 +1,393 @@
+{
+  "products": [
+    {
+      "desc": "TikTok — short video platform by ByteDance, launched internationally 2018",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.92,
+      "formula": true,
+      "formula_r0": 4.345460035942652
+    },
+    {
+      "desc": "Instagram — photo sharing app, launched 2010",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 2.410864376825067
+    },
+    {
+      "desc": "Spotify — music streaming, launched 2008",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 2.8930372521900805
+    },
+    {
+      "desc": "WhatsApp — messaging app, launched 2009",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 2.8930372521900805
+    },
+    {
+      "desc": "Airbnb — home sharing platform, launched 2008",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 2.5103132576773657
+    },
+    {
+      "desc": "Shopify — e-commerce platform for small businesses, launched 2006",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.92,
+      "formula": true,
+      "formula_r0": 2.5103132576773657
+    },
+    {
+      "desc": "Tesla — electric vehicles, founded 2003",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.85,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 1.9867873776011789
+    },
+    {
+      "desc": "Uber — ride-hailing app, launched 2010",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 2.8930372521900805
+    },
+    {
+      "desc": "Docker — container platform for developers, launched 2013",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 3.3836288180207235
+    },
+    {
+      "desc": "Twitch — live game streaming, launched 2011",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.9,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 1.8054752664011324
+    },
+    {
+      "desc": "Segway — personal electric transporter, launched 2001",
+      "truth": false,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.009120000000000001
+    },
+    {
+      "desc": "Google Glass — smart glasses, launched 2013",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.00012830815199894256
+    },
+    {
+      "desc": "Amazon Fire Phone — smartphone by Amazon, launched 2014",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.15,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.013871598685434876
+    },
+    {
+      "desc": "MoviePass — $10/month unlimited movie tickets, launched 2017",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.15,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.04862247482672405
+    },
+    {
+      "desc": "Juicero — $400 WiFi juicer, launched 2016",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.15,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.00018578033953707424
+    },
+    {
+      "desc": "WeWork — co-working space, IPO attempt 2019",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.15,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.009951849464766835
+    },
+    {
+      "desc": "Yik Yak — anonymous local social app, launched 2013",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.03582708671442824
+    },
+    {
+      "desc": "Jawbone — fitness wearable company",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.2,
+      "formula": false,
+      "formula_r0": 0.1436588866777593
+    },
+    {
+      "desc": "Magic Leap — AR headset, launched 2018",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.01061189014564043
+    },
+    {
+      "desc": "Rdio — music streaming service, launched 2010",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.2,
+      "formula": false,
+      "formula_r0": 0.18423217004093193
+    }
+  ],
+  "habits": [
+    {
+      "desc": "Brush teeth twice daily as an adult",
+      "actual": 0.9,
+      "naked_prob": 0.85,
+      "structured_prob": 0.85,
+      "formula_r0": 1.5467273465638753
+    },
+    {
+      "desc": "Wear seatbelt when driving",
+      "actual": 0.92,
+      "naked_prob": 0.95,
+      "structured_prob": 0.95,
+      "formula_r0": 4.158555844311132
+    },
+    {
+      "desc": "Drink coffee every morning",
+      "actual": 0.85,
+      "naked_prob": 0.85,
+      "structured_prob": 0.85,
+      "formula_r0": 1.8455047196384282
+    },
+    {
+      "desc": "Cook dinner at home most nights for 1 year",
+      "actual": 0.45,
+      "naked_prob": 0.3,
+      "structured_prob": 0.25,
+      "formula_r0": 0.22888137830967545
+    },
+    {
+      "desc": "Wake up at 5am every day for 6 months",
+      "actual": 0.08,
+      "naked_prob": 0.25,
+      "structured_prob": 0.25,
+      "formula_r0": 0.015354465734754961
+    },
+    {
+      "desc": "Run a marathon after starting from zero",
+      "actual": 0.15,
+      "naked_prob": 0.25,
+      "structured_prob": 0.15,
+      "formula_r0": 0.028298373721707813
+    },
+    {
+      "desc": "Save 20% of income consistently for 5 years",
+      "actual": 0.18,
+      "naked_prob": 0.3,
+      "structured_prob": 0.25,
+      "formula_r0": 0.2212346854837493
+    },
+    {
+      "desc": "Learn to code and get a job (self-taught, no bootcamp)",
+      "actual": 0.12,
+      "naked_prob": 0.7,
+      "structured_prob": 0.25,
+      "formula_r0": 0.12734268174768515
+    },
+    {
+      "desc": "Maintain a daily stretching/yoga routine for 1 year",
+      "actual": 0.15,
+      "naked_prob": 0.25,
+      "structured_prob": 0.25,
+      "formula_r0": 0.29192091763316047
+    },
+    {
+      "desc": "Write 1000 words every day for 1 year",
+      "actual": 0.05,
+      "naked_prob": 0.25,
+      "formula_r0": 0.11061734274187468
+    }
+  ],
+  "historical": [
+    {
+      "desc": "2007: Apple launches iPhone, entering phone market with no experience",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 14.876747730805251
+    },
+    {
+      "desc": "1962: JFK decides to go to the moon within the decade",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 27.962192721794366
+    },
+    {
+      "desc": "1990: Tim Berners-Lee creates the World Wide Web at CERN",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 22.960338407997767
+    },
+    {
+      "desc": "2006: Google acquires YouTube for $1.65 billion",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.95,
+      "formula": true,
+      "formula_r0": 34.92420805252685
+    },
+    {
+      "desc": "1948: Marshall Plan — US sends $13B to rebuild Europe",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.9,
+      "structured": true,
+      "structured_prob": 0.95
+    },
+    {
+      "desc": "1999: Netflix pivots from DVD mail to subscription model",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.95,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 4.210738084648012
+    },
+    {
+      "desc": "2001: Enron executives decide to hide debt in off-balance-sheet entities",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.05,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.5593412517660736
+    },
+    {
+      "desc": "1975: Sony launches Betamax, expecting to dominate home video",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.25,
+      "formula": true,
+      "formula_r0": 1.536926484292265
+    },
+    {
+      "desc": "2013: BlackBerry launches BB10 OS to compete with iPhone and Android",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.15,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.0005132326079957702
+    },
+    {
+      "desc": "2000: AOL merges with Time Warner for $165 billion",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.15,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.00029477472626778976
+    },
+    {
+      "desc": "1839: Britain starts First Opium War against Qing Dynasty China",
+      "truth": true,
+      "naked": true,
+      "naked_prob": 0.85,
+      "structured": true,
+      "structured_prob": 0.85,
+      "formula": true,
+      "formula_r0": 2.8196906816839364
+    },
+    {
+      "desc": "2003: US decides to invade Iraq based on WMD intelligence",
+      "truth": false,
+      "naked": false,
+      "naked_prob": 0.2,
+      "structured": false,
+      "structured_prob": 0.15,
+      "formula": false,
+      "formula_r0": 0.0005895494525355795
+    }
+  ]
+}
