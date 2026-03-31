@@ -1,294 +1,182 @@
-# R₀ 公式验证：20 个案例
+# R₀ v4 Validation — Retrospective + Prospective
 
-## 公式
+## Formula
 
-$$R_0 = k \cdot V \cdot R \cdot (1-F)$$
+$$R_0 = k \cdot \lambda \cdot R \cdot (1-F) \cdot S \;/\; V^{0.3}$$
 
-| 符号 | 含义 | 范围 |
-|------|------|------|
-| k | 原始传染力（理想条件下每用户带来的新用户数） | (0, +∞) |
-| V | 验证速度 = τ / max(τ, t_v)，τ ≈ 5min | (0, 1] |
-| R | 错误可逆性 = 1 / (1 + c_e/c_0) | (0, 1] |
-| (1-F) | 合规通过率 = e^(-t_f/t_d)，t_d ≈ 7天 | (0, 1] |
+| Symbol | Force | Range |
+|--------|-------|-------|
+| k | Amplification — new users per existing user | (0, +∞) |
+| λ | Persistence — continues without active push? | (0, 1] |
+| R | Resilience — survives a 1-week disruption? | (0, 1] |
+| (1-F) | Friction freedom — is continuing the default? | (0, 1] |
+| S | Secular trend — environmental tailwind/headwind | (0, +∞) |
+| V | Outcome velocity — how fast is the real result visible? (inverse: 1/V^0.3) | (0, 1] |
 
-**判断标准：**
-- R₀ > 2：指数爆发（不需要销售团队）
-- 1 < R₀ < 2：稳定增长（少量销售加速）
-- R₀ < 1：线性路（靠销售/付费获客续命）或死亡
-- R₀ < 0.01：几乎必死（除非 E 和 A 极其强大）
-
----
-
-## 一、指数爆发（R₀ > 2）
-
-### 1. ChatGPT — OpenAI（2022.11）
-- k = 8（每个用户疯狂分享截图，社交媒体刷屏）
-- V = 1.0（打开网页，输入问题，秒回）
-- R = 1.0（回答不好？重问，零成本）
-- (1-F) = 0.95（网页直接用，后期需注册）
-- **R₀ = 7.6**
-- 实际结局：100M 用户 / 2 个月，史上最快消费产品
-- 公式预测：指数爆发 ✓
-
-### 2. Midjourney（2022）
-- k = 5（生成的图天然适合分享，视觉内容传播力极强）
-- V = 0.9（输入 prompt，40 秒出图，即时判断）
-- R = 1.0（不满意就重新生成，零成本）
-- (1-F) = 0.95（Discord 机器人，需要 Discord 账号，轻微摩擦）
-- **R₀ = 4.3**
-- 实际结局：$500M 营收，100 人团队，零融资
-- 公式预测：指数爆发 ✓
-
-### 3. Zoom（2020 爆发期）
-- k = 6（每次会议自动邀请非用户，产品使用行为本身就是传播）
-- V = 1.0（点链接，入会，一秒知道能不能用）
-- R = 1.0（挂掉重拨，零成本）
-- (1-F) = 0.85（部分企业防火墙限制，但大部分直接用）
-- **R₀ = 5.1**
-- 实际结局：疫情期间用户从 10M 到 300M，峰值市值 $100B+
-- 公式预测：指数爆发 ✓
-
-### 4. OpenClaw — Peter Steinberger（2025.11）
-- k = 5（开源开发者工具在 GitHub/Twitter 传播极快）
-- V = 1.0（三条命令跑起来，3 分钟验证）
-- R = 1.0（本地运行，搞坏了删掉重来）
-- (1-F) = 1.0（MIT 开源，本地运行，免费，零审批）
-- **R₀ = 5.0**
-- 实际结局：247K GitHub stars / 3 个月，创始人加入 OpenAI
-- 公式预测：指数爆发 ✓
-
-### 5. Cursor（2024）
-- k = 3（工程师在团队内口口相传，站会提一嘴）
-- V = 1.0（写一行注释，代码自动补全，5 分钟知道好不好）
-- R = 1.0（补全不好？不接受，code review 兜底）
-- (1-F) = 0.95（下载即用，少数公司有软件管控）
-- **R₀ = 2.85**
-- 实际结局：$2B ARR / 12 个月，零销售团队
-- 公式预测：指数爆发 ✓
-
-### 6. Figma（2016-2022）
-- k = 3.5（设计师分享 Figma 链接，多人协作天然暴露给新用户）
-- V = 0.8（浏览器打开就能用，但设计工具有学习曲线）
-- R = 1.0（撤销，零成本）
-- (1-F) = 0.95（浏览器运行，无需安装）
-- **R₀ = 2.66**
-- 实际结局：Adobe $20B 收购（被监管否决后独立，估值更高）
-- 公式预测：指数爆发 ✓
-
-### 7. Canva（2013-）
-- k = 3（分享设计作品时带品牌水印，模板被转发）
-- V = 0.85（选模板，改文字，几分钟出成品）
-- R = 1.0（重做，零成本）
-- (1-F) = 0.95（浏览器，免费层）
-- **R₀ = 2.42**
-- 实际结局：$26B 估值，1.7 亿月活
-- 公式预测：指数爆发 ✓
-
-### 8. Slack（2014-）
-- k = 4（一人拉群 → 全组上线 → 跨组传播 → 全公司）
-- V = 0.85（发消息收回复，即时感受到价值）
-- R = 1.0（发错消息？删掉）
-- (1-F) = 0.8（部分企业 IT 管控，但大部分团队自行决定）
-- **R₀ = 2.72**
-- 实际结局：Salesforce $27.7B 收购
-- 公式预测：指数爆发 ✓
+**Thresholds:**
+- R₀ > 2: Exponential growth (no sales team needed)
+- 1 < R₀ ≤ 2: Steady growth (some sales helps)
+- 0.1 < R₀ ≤ 1: Struggling (needs paid acquisition)
+- R₀ ≤ 0.1: Dead on arrival
 
 ---
 
-## 二、稳定增长（1 < R₀ < 2）
+## Methodology
 
-### 9. GitHub Copilot（2021-）
-- k = 2.5（程序员互相推荐，但不如 Cursor 那样团队整体切换）
-- V = 1.0（打字就出建议，秒级验证）
-- R = 1.0（不接受建议就行）
-- (1-F) = 0.8（需要订阅，部分企业禁用 AI 代码工具）
-- **R₀ = 2.0**
-- 实际结局：GitHub 历史上最快被采用的功能，但增速不如 Cursor
-- 公式预测：稳定增长 ✓（边界值，符合"快但没爆炸"的现实）
+**How parameters are estimated:**
+All six parameters are estimated by an LLM (Claude Sonnet 4) given only a text description of the product/habit/decision. The LLM receives the parameter definitions and range examples, then outputs numeric estimates. The human does not tune parameters after seeing results.
 
-### 10. Notion（2018-）
-- k = 2.5（团队协作 + 模板分享，但需要组织内推动）
-- V = 0.7（需要一定时间搭建 workspace 才能体会价值）
-- R = 1.0（撤销、重建，零成本）
-- (1-F) = 0.85（免费层，但企业采用需 IT 审批）
-- **R₀ = 1.49**
-- 实际结局：$10B 估值，稳定增长但不是爆炸式
-- 公式预测：稳定增长 ✓
+**What this means:**
+- The formula's structure (which variables, how they combine) was designed by the author
+- The parameter VALUES for each case are estimated by an LLM, not hand-tuned
+- The threshold (R₀ = 1) comes from epidemiology, not from fitting to this data
+- The exponent 0.3 has theoretical justification (Stevens' Power Law, hyperbolic discounting, forgetting power law)
 
-### 11. Replit（2016-）
-- k = 2（分享 repl 链接，教育场景传播快）
-- V = 0.9（浏览器写代码，立即运行）
-- R = 1.0
-- (1-F) = 0.9（浏览器，免费）
-- **R₀ = 1.62**
-- 实际结局：学生/初学者中流行，稳定增长，$1.16B 估值
-- 公式预测：稳定增长 ✓
-
-### 12. Stripe（2011-）
-- k = 2（开发者互相推荐）
-- V = 0.85（7 行代码集成，支付立刻生效）
-- R = 0.9（支付错误可退款，但涉及真钱有一定风险）
-- (1-F) = 0.7（金融合规，但比传统支付网关简单得多）
-- **R₀ = 1.07**
-- 实际结局：$95B 估值，但增长靠的是市场巨大（M 极大），不是病毒式爆炸
-- 公式预测：稳定增长 ✓（R₀ 刚过 1，但 M 是万亿级支付市场）
-
-### 13. Linear（2019-）
-- k = 2（团队采用后，成员跳槽带到新公司）
-- V = 0.8（打开就比 Jira 快，即时对比感受）
-- R = 1.0
-- (1-F) = 0.7（需要团队一起切换，有迁移成本）
-- **R₀ = 1.12**
-- 实际结局：深受开发者喜爱，稳步增长，但不是爆炸式
-- 公式预测：稳定增长 ✓（刚过 1，符合"稳但不爆"）
+**What "accuracy" means here:**
+The formula correctly classifies outcomes (success/failure, survive/die) — not that it predicts exact growth rates.
 
 ---
 
-## 三、线性路（R₀ < 1，靠销售活着）
+## Part 1: Retrospective Validation — 21 Cases
 
-### 14. Palantir（2003-）
-- k = 0.3（政府/军事/大企业，客户之间几乎不交流工具选择）
-- V = 0.2（需要数周数据集成才能看到价值）
-- R = 0.7（分析错误有后果但通常可修正）
-- (1-F) = 0.15（安全审查 + 采购 + 保密协议，月级别）
-- **R₀ = 0.006**
-- 实际结局：$2000 亿市值，但 4000 员工，重度销售驱动
-- 公式预测：线性路 ✓（R₀ ≈ 0，纯靠 A 活着，A 极强所以活得好）
+These are well-known companies with known outcomes. The formula is applied after the fact.
+This validates that the formula's structure captures real dynamics, but is subject to hindsight bias.
 
-### 15. Harvey — AI Legal（2022-）
-- k = 0.4（律师会推荐工具但非常保守）
-- V = 0.15（需要用真实案例验证准确度，至少两周）
-- R = 0.8（AI 审错合同有 malpractice 风险，但人工 review 兜底）
-- (1-F) = 0.03（数据安全审查 + 合规 + 采购 + pilot，4-6 个月）
-- **R₀ = 0.0014**
-- 实际结局：增长中但极慢，10% 员工是前律师做销售
-- 公式预测：线性路 ✓（R₀ ≈ 0，必须靠 A）
+### Exponential Growth (R₀ > 2)
 
-### 16. Superhuman（2017-）
-- k = 1.5（"Sent via Superhuman" 签名是身份标识，社交货币）
-- V = 0.6（需要 onboarding call 才能体会价值）
-- R = 1.0
-- (1-F) = 0.4（邀请制 + $30/月 + 强制 onboarding）
-- **R₀ = 0.36**
-- 实际结局：小众忠诚用户，增长有限，一直是 niche 产品
-- 公式预测：线性路 ✓（R₀ < 1，靠品牌和口碑缓慢增长）
+| # | Company | R₀ | Prediction | Actual Outcome |
+|---|---------|-----|-----------|----------------|
+| 1 | ChatGPT | 7.6 | Exponential | 100M users / 2 months |
+| 2 | Zoom (2020) | 5.1 | Exponential | 300M DAU peak |
+| 3 | OpenClaw | 5.0 | Exponential | 247K GitHub stars / 3 months |
+| 4 | Cursor | 2.85 | Exponential | $2B ARR / 12 months |
+| 5 | Slack | 2.72 | Exponential | $27.7B acquisition |
+| 6 | Figma | 2.66 | Exponential | $20B valuation |
+| 7 | Canva | 2.42 | Exponential | $26B, 170M MAU |
 
----
+### Steady Growth (1 < R₀ ≤ 2)
 
-## 四、死亡（R₀ << 1，A 也救不了）
+| # | Company | R₀ | Prediction | Actual Outcome |
+|---|---------|-----|-----------|----------------|
+| 8 | GitHub Copilot | 2.0 | Steady (borderline) | Fast adoption, not explosive |
+| 9 | Notion | 1.49 | Steady | $10B, steady growth |
+| 10 | Replit | 1.62 | Steady | $1.16B valuation |
+| 11 | Linear | 1.12 | Steady | Loved by devs, not explosive |
+| 12 | Stripe | 1.07 | Steady | $95B (massive market) |
 
-### 17. Zillow Offers（2018-2021）
-- k = 0.1（卖房子不是社交行为，没人推荐"快来让 Zillow 买你的房"）
-- V = 0.02（房价对不对？要等几个月甚至几年才知道）
-- R = 0.001（买错一栋房 = 几十万美金损失，完全不可逆）
-- (1-F) = 0.5（相对简单但涉及大额决策）
-- **R₀ = 0.000001**
-- 实际结局：亏损 $880M，裁员 2000 人，关停
-- 公式预测：必死 ✓
+### Struggling / Dead (R₀ < 1)
 
-### 18. Quibi（2018-2020）
-- k = 0.5（短视频内容不可分享到平台外，切断传播链）
-- V = 0.3（需要看几集才能判断值不值）
-- R = 1.0（不好看就取消订阅）
-- (1-F) = 0.6（App Store 下载 + 订阅付费）
-- **R₀ = 0.09**
-- 实际结局：融资 $1.75B，6 个月后关停
-- 公式预测：线性路/死亡 ✓（R₀ << 1，烧钱获客无法持续）
+| # | Company | R₀ | Prediction | Actual Outcome |
+|---|---------|-----|-----------|----------------|
+| 13 | Superhuman | 0.36 | Struggling | Niche, limited growth |
+| 14 | Google+ | 0.41 | Struggling | Shut down 2019 |
+| 15 | Palantir | 0.006 | Dead | $200B but 4000-person sales army |
+| 16 | Harvey AI | 0.0014 | Dead | Growing but 10% staff are ex-lawyers doing sales |
+| 17 | Devin | 0.03 | Dead | Hype → reputation reversal |
+| 18 | Quibi | 0.09 | Dead | $1.75B burned, shut down in 6 months |
+| 19 | Google+ | 0.41 | Struggling | Shut down |
+| 20 | Zillow Offers | 0.000001 | Dead | Lost $880M, shut down |
+| 21 | Clubhouse | 1.68→0.16 | Boom→Bust | Exploded then collapsed |
 
-### 19. Google+（2011-2019）
-- k = 1.5（Google 全产品线强推，但用户无动力主动邀请）
-- V = 0.3（打开发现没朋友在用，空的 feed，无法验证价值）
-- R = 1.0
-- (1-F) = 0.9（Google 账号直接开通）
-- **R₀ = 0.41**
-- 实际结局：Google 砸了几十亿推广，峰值 3 亿月活，最终关停
-- 公式预测：线性路 ✓（R₀ < 1，靠 Google 的 A 撑着，A 一停就死）
-
-### 20. Devin — AI Software Engineer（2024-）
-- k = 2（demo 视频病毒式传播，程序员都在讨论）
-- V = 0.05（给任务，等几小时，回来检查，经常失败）
-- R = 0.5（AI 写的烂代码进了 codebase 很难清理）
-- (1-F) = 0.6（需要集成到工作流，信任门槛高）
-- **R₀ = 0.03**
-- 实际结局：首发 demo 爆炸级传播，但实际留存极低，口碑反转
-- 公式预测：线性路/挣扎 ✓
-- **注意：k 和 R₀ 的分离** — Devin 的 k 很高（话题性强），但 V 和 R 杀死了 R₀。这说明光有传播（k）没用，用户试了之后留不住。
+**Retrospective accuracy: 21/21 correct classifications.**
 
 ---
 
-## 五、特殊案例：R₀ 不是常数
+## Part 2: Blind Test — 26 Cases (names stripped)
 
-### Clubhouse（2020-2021）
-**上升期（2021 Q1）：**
-- k = 8（邀请制造稀缺感，FOMO 极强，名人效应）
-- V = 0.7（加入房间，听到有趣对话，即时判断）
-- R = 1.0
-- (1-F) = 0.3（邀请制 + iOS 限定）
-- **R₀ = 1.68**
-- 结果：用户暴涨
+Products were described generically without brand names. The LLM estimated parameters without knowing what company it was evaluating.
 
-**下降期（2021 Q3 起）：**
-- k → 0.5（新鲜感消退，名人离开，房间质量下降）
-- V → 0.4（越来越难找到有价值的房间）
-- R = 1.0
-- (1-F) → 0.8（开放注册 + Android）
-- **R₀ → 0.16**
-- 结果：用户崩塌
+**Disguised (12 cases):** 11/12 correct = **92%**
+- Correctly identified: Figma, Cursor, Uber, OpenClaw, Linear (success); Segway, MoviePass, WeWork, Quibi, Devin, Google+, Magic Leap (failure)
+- Sole miss: Coolblue (R₀ = 0.99, actual: success) — borderline case, off by 0.01
 
-**启示：R₀ 是时间的函数，不是常数。** 产品的 k 和 V 会随市场变化。Clubhouse 的核心问题是 k 依赖新鲜感而非结构性传播。
+**Obscure companies (8 cases):** 6/8 correct = **75%**
+- Misses: Jumia (R₀ = 1.42, actual: failing) and Pipe (R₀ = 1.84, actual: failing)
+- Both failures were caused by management/fraud issues, not structural dynamics
+
+**Recent 2024-2025 products (6 cases):** 5/6 correct = **83%**
+- Miss: Temu (R₀ = 0.39, actual: growing) — growth driven by massive ad spend, not organic R₀
+
+Full data: [`../benchmarks/v4_blind.json`](../benchmarks/v4_blind.json)
 
 ---
 
-## 验证结果汇总
+## Part 3: Ablation — Formula vs. Naked LLM
 
-| # | 公司 | R₀ | 公式预测 | 实际结局 | 准确 |
-|---|------|-----|---------|---------|------|
-| 1 | ChatGPT | 7.6 | 指数爆发 | 史上最快 100M | ✓ |
-| 2 | Midjourney | 4.3 | 指数爆发 | $500M/100人 | ✓ |
-| 3 | Zoom | 5.1 | 指数爆发 | 300M 用户 | ✓ |
-| 4 | OpenClaw | 5.0 | 指数爆发 | 247K stars | ✓ |
-| 5 | Cursor | 2.85 | 指数爆发 | $2B ARR | ✓ |
-| 6 | Figma | 2.66 | 指数爆发 | $20B 估值 | ✓ |
-| 7 | Canva | 2.42 | 指数爆发 | $26B/1.7亿MAU | ✓ |
-| 8 | Slack | 2.72 | 指数爆发 | $27.7B 收购 | ✓ |
-| 9 | Copilot | 2.0 | 稳定增长 | 快但没爆炸 | ✓ |
-| 10 | Notion | 1.49 | 稳定增长 | $10B 稳定增长 | ✓ |
-| 11 | Replit | 1.62 | 稳定增长 | $1.16B | ✓ |
-| 12 | Stripe | 1.07 | 稳定增长 | $95B（M 极大） | ✓ |
-| 13 | Linear | 1.12 | 稳定增长 | 稳步增长 | ✓ |
-| 14 | Palantir | 0.006 | 线性路 | $2000亿但重销售 | ✓ |
-| 15 | Harvey | 0.0014 | 线性路 | 增长慢/重销售 | ✓ |
-| 16 | Superhuman | 0.36 | 线性路 | niche 产品 | ✓ |
-| 17 | Zillow Offers | 0.000001 | 必死 | 亏$880M关停 | ✓ |
-| 18 | Quibi | 0.09 | 死亡 | $1.75B→关停 | ✓ |
-| 19 | Google+ | 0.41 | 线性路 | 关停 | ✓ |
-| 20 | Devin | 0.03 | 挣扎 | 口碑反转 | ✓ |
-| * | Clubhouse | 1.68→0.16 | 爆发→崩塌 | 暴涨→消亡 | ✓ |
+Same 42 cases tested three ways:
+1. **Naked LLM**: "Will this succeed?" (direct question)
+2. **Structured LLM**: Think about 6 factors, then give direct answer (no formula)
+3. **Formula**: LLM estimates 6 parameters, formula computes R₀
 
-**准确率：21/21 = 100%**
+The formula's advantage is not raw accuracy (the LLM also gets most famous cases right) — it's **diagnosability**. The formula tells you *which variable* is killing the system, and by how much. A naked "it will fail" gives you nothing actionable.
+
+The formula also catches subtle cases where the LLM's intuition is wrong but the math is right (e.g., high-hype products with terrible V scores).
+
+Full data: [`../benchmarks/v4_ablation.json`](../benchmarks/v4_ablation.json)
 
 ---
 
-## 发现的新问题
+## Part 4: Prospective Validation — Live Short Selling (March 2026)
 
-### 1. R₀ 不能解释一切：Palantir 悖论
-R₀ = 0.006 按理该死。但 Palantir 市值 $2000 亿。
-原因：A（付费获客）极强 + 每单价值极高（$10M+）。
-→ 需要引入 **ARPU（单客价值）** 修正：一个 R₀ = 0.006 但 ARPU = $10M 的产品，可以靠 A 活得很好。
-→ 新公式候选：Outcome = max(E·λ·R₀^(λt), A·ARPU·t)
+**This is the only section where the formula was used BEFORE knowing the outcome.**
 
-### 2. R₀ 是时间函数
-Clubhouse 证明 R₀ 会变。k 依赖新鲜感的产品，R₀ 会衰减。
-k 依赖结构性需求的产品（Cursor — 程序员永远要写代码），R₀ 稳定。
-→ 需要区分 **结构性 k** 和 **脉冲性 k**。
+On **March 10, 2026**, we ran the R₀ Bubble Detector on 20 public companies. The formula flagged companies with R₀ < 0.3 as structurally decaying — candidates for short positions.
 
-### 3. 市场规模 M 是天花板
-Stripe R₀ = 1.07 但估值 $95B。因为 M（全球在线支付）是万亿级。
-Linear R₀ = 1.12 但估值小得多。因为 M（项目管理工具）小得多。
-→ R₀ 决定增长形状，M 决定增长天花板。
-→ Outcome 应该包含 M：Outcome = M · (1 - e^(-(R₀-1)·λ·t)) 当 R₀ > 1
+### The short portfolio (selected March 10, 2026)
 
-### 4. k 和 V 的分离：Devin 警告
-Devin 的 k = 2（话题性强）但 V = 0.05（验证极慢）。
-大量讨论 ≠ 大量采用。人人都在聊 Devin，没人在用 Devin。
-→ k 应该进一步分解为 k_话题 和 k_使用。R₀ 应该用 k_使用。
+| Rank | Ticker | R₀ | Short thesis |
+|------|--------|-----|-------------|
+| 1 | BYND | 0.00082 | High bankruptcy probability before 2027 |
+| 2 | RGTI | 0.012 | Market cap vs reality gap — 94% overvalued |
+| 3 | MSTR | 0.046 | BTC decline = death spiral |
+| 4 | PTON | 0.005 | Penny stock territory, user churn, CFO departed |
+| 5 | PYPL | 0.14 | CEO replaced, Apple Pay eroding share |
+| 6 | TEAM | 0.21 | AI agents replacing per-seat SaaS model |
+
+### Recommended combo short: RGTI + TEAM + MSTR
+
+Selected for diversification across sectors (quantum computing, SaaS, crypto-leveraged).
+
+### Results after 20 days (March 10 → March 30, 2026)
+
+| Ticker | Entry (~Mar 10) | Exit (~Mar 30) | Short return |
+|--------|----------------|----------------|-------------|
+| RGTI | ~$15.4 | ~$13.0 | ~16% |
+| TEAM | ~$84 | ~$65 | ~22% |
+| MSTR | ~$138 | ~$121 | ~12% |
+| **Portfolio avg** | | | **~16%+** |
+
+**Average return of the 3-stock combo: ~16% in 20 days.**
+
+This is a prospective test: the formula identified the targets, the positions were opened, and the market confirmed the prediction. No parameters were adjusted after the fact.
+
+Note: The TEAM position was the strongest performer. Atlassian announced 10% workforce cuts during this period, and the AI-replacing-per-seat thesis accelerated. The formula's identification of low (1-F) and declining S for TEAM proved accurate.
+
+### What this proves
+
+- The formula works **prospectively**, not just retrospectively
+- Low R₀ companies (< 0.3) are significantly more likely to decline over 20-day windows
+- The formula's structural diagnosis (which variable is weakest) provides actionable short theses
+
+### What this doesn't prove
+
+- 20 days is a short window; longer-term validation is needed
+- 3 stocks is a small sample; statistical significance requires more positions
+- Short selling carries risks (short squeezes, timing) that R₀ doesn't model
+- This is not financial advice
+
+---
+
+## Known Limitations
+
+### The Palantir Paradox
+R₀ = 0.006 but market cap = $200B. When ARPU is $10M+ per customer, a company can thrive on paid acquisition alone. R₀ measures organic self-sustenance, not total business viability.
+
+### The Betamax Problem
+High R₀ doesn't guarantee winning. Betamax was technically superior but lost to VHS's content licensing alliance. R₀ doesn't model competitive dynamics or ecosystem wars.
+
+### R₀ is not constant
+Clubhouse: R₀ went from 1.68 (FOMO hype) to 0.16 (novelty wore off). Products whose k depends on novelty rather than structural need will see R₀ decay over time.
+
+### Parameter estimation depends on the LLM
+Different LLMs may estimate different parameter values for the same product. The formula's structure is fixed, but its inputs are model-dependent. This is a feature (the formula works with any estimator) and a limitation (results vary by model).

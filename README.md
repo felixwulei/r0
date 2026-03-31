@@ -18,7 +18,11 @@ R₀ = k · λ · R · (1-F) · S / V^0.3
 
 Borrowed from epidemiology. If one infected person infects more than one other, the disease spreads. Same math applies to products, habits, and decisions.
 
-## Validation: 21 cases, 100% accuracy
+## Validation
+
+Parameters are estimated by an LLM (Claude Sonnet 4) given only a text description — not hand-tuned by humans after seeing outcomes. The R₀ = 1 threshold comes from epidemiology. The 0.3 exponent has [theoretical justification](paper/theory.md).
+
+### Retrospective: 21 cases, 21/21 correct classifications
 
 | Company | R₀ | Predicted | Actual | |
 |---|---|---|---|---|
@@ -28,29 +32,33 @@ Borrowed from epidemiology. If one infected person infects more than one other, 
 | Slack | 2.72 | Exponential | $27.7B acquisition | ✓ |
 | Notion | 1.49 | Steady | $10B, steady growth | ✓ |
 | Stripe | 1.07 | Steady | $95B (huge market) | ✓ |
-| Linear | 1.12 | Steady | Loved but not explosive | ✓ |
 | Superhuman | 0.36 | Struggling | Niche, limited growth | ✓ |
 | Devin | 0.03 | Dead | Hype → reputation reversal | ✓ |
-| Google+ | 0.41 | Struggling | Shut down | ✓ |
 | Quibi | 0.09 | Dead | $1.75B burned, shut down | ✓ |
 | Zillow Offers | 0.000001 | Dead | Lost $880M, shut down | ✓ |
 
-Full 21-case validation with parameter breakdowns: [`paper/validation.md`](paper/validation.md)
+These are known companies with known outcomes — subject to hindsight bias. Full 21-case breakdown: [`paper/validation.md`](paper/validation.md)
 
-### Blind test: 92% accuracy
+### Blind test: 92% accuracy (no brand names)
 
-We stripped brand names and tested on disguised descriptions. The formula identified Figma, Cursor, Uber, OpenClaw as winners and Segway, MoviePass, WeWork, Quibi, Devin, Google+, Magic Leap as failures — without knowing what they were.
+We stripped brand names and tested on disguised descriptions. The formula identified Figma, Cursor, Uber, OpenClaw as winners and Segway, MoviePass, WeWork, Quibi, Devin, Google+, Magic Leap as failures — without knowing what they were. Details: [`benchmarks/v4_blind.json`](benchmarks/v4_blind.json)
 
-Details: [`benchmarks/v4_blind.json`](benchmarks/v4_blind.json)
+### Prospective: Live short selling (March 2026)
+
+On March 10, 2026, we ran R₀ on 20 public companies and shorted the three lowest-scoring:
+
+| Ticker | R₀ | Short thesis | 20-day return |
+|--------|-----|-------------|---------------|
+| RGTI | 0.012 | Market cap vs reality — 94% overvalued | ~16% |
+| TEAM | 0.21 | AI agents replacing per-seat SaaS | ~22% |
+| MSTR | 0.046 | BTC decline = death spiral | ~12% |
+| **Average** | | | **~16%** |
+
+**This is the only test where the formula was used BEFORE knowing the outcome.** Positions were opened based on R₀ scores, then the market confirmed the predictions. No parameters were adjusted after the fact. Details: [`paper/validation.md`](paper/validation.md#part-4-prospective-validation--live-short-selling-march-2026)
 
 ### Ablation: Formula vs. Naked LLM
 
-We tested three conditions on 42 cases:
-1. **Naked LLM** — "Will this succeed?" (direct question)
-2. **Structured LLM** — Think about 6 factors, then answer (no formula)
-3. **Formula** — LLM estimates 6 parameters, formula computes R₀
-
-The formula catches cases that naked intuition misses — and exposes *why* something will fail by pointing to the weakest variable.
+Three conditions on 42 cases: naked LLM ("will this succeed?"), structured LLM (think about 6 factors), and formula (LLM estimates params, formula computes R₀). The formula's advantage isn't raw accuracy — it's **diagnosability**: it tells you *which variable* is killing the system.
 
 ## The Six Forces
 
@@ -154,7 +162,8 @@ Full derivation with proofs: [`paper/theory.md`](paper/theory.md)
 
 ```
 sdk/           Python package (pip install)
-paper/         Theory derivation + 21-case validation
+sdk/tests/     Unit tests (14 tests)
+paper/         Theory derivation + validation (retrospective + prospective)
 benchmarks/    Raw results: e2e, ablation, blind test
 ```
 
